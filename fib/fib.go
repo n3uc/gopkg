@@ -2,7 +2,7 @@ package fib
 
 // Return a slice of fibinoacci numbers
 // NOTE: contains a 0 at element 0 so indexing is correct
-func fibSliceMax(max int) []int {
+func SliceMax(max int) []int {
 	fibslice := []int{0, 1, 2}
 	fib := 3
 	idx := 3
