@@ -70,3 +70,27 @@ func Factors(n int) []int {
 	}
 	return primes
 }
+
+// IsPrime returns true if n is Prime
+func IsPrime(n int) bool {
+	d := 2
+	cnt := false
+	for n > 1 {
+		for n%d == 0 {
+			if cnt {
+				return false
+			}
+			cnt = true
+			n /= d
+		}
+		d++
+		if d*d > n && n > 1 {
+			if cnt {
+				return false
+			}
+			cnt = true
+			break
+		}
+	}
+	return cnt
+}
