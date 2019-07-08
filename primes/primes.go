@@ -50,3 +50,23 @@ func MaxFactor(n int) int {
 	}
 	return max
 }
+
+// Factors returns a slice containing the Prime Factors of n.
+// It may contain more than one of any given prime. It lists
+// all prime factors on the number.
+func Factors(n int) []int {
+	d := 2
+	primes := []int{}
+	for n > 1 {
+		for n%d == 0 {
+			primes = append(primes, d)
+			n /= d
+		}
+		d++
+		if d*d > n && n > 1 {
+			primes = append(primes, n)
+			break
+		}
+	}
+	return primes
+}
