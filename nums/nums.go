@@ -1,5 +1,35 @@
 package nums
 
+import (
+	"strconv"
+	"strings"
+)
+
+func Min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
+}
+
+func Max(x, y int) int {
+	if x > y {
+		return x
+	}
+	return y
+}
+
+// StringMul multiplies each char when converted with Atoi and returns the result
+func StringMul(st string) int {
+	a := strings.Split(st, "")
+	m := 1
+	for _, c := range a {
+		i, _ := strconv.Atoi(c)
+		m *= i
+	}
+	return m
+}
+
 // SumSlice sums up all elements in an int array
 func SumSlice(list []int) int {
 	sum := 0
