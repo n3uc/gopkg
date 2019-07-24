@@ -5,18 +5,26 @@ import (
 	"strings"
 )
 
-func Min(x, y int) int {
-	if x < y {
-		return x
+// Min returns the Smallest int of all params
+func Min(n ...int) int {
+	min := n[0]
+	for _, num := range n {
+		if num < min {
+			min = num
+		}
 	}
-	return y
+	return min
 }
 
-func Max(x, y int) int {
-	if x > y {
-		return x
+// Max returns the Largest int of all params
+func Max(n ...int) int {
+	max := n[0]
+	for _, num := range n {
+		if num > max {
+			max = num
+		}
 	}
-	return y
+	return max
 }
 
 // StringMul multiplies each char when converted with Atoi and returns the result
@@ -35,6 +43,15 @@ func SumSlice(list []int) int {
 	sum := 0
 	for _, v := range list {
 		sum += v
+	}
+	return sum
+}
+
+// MulSlice sums up all elements in an int array
+func MulSlice(list []int) int {
+	sum := 1
+	for _, v := range list {
+		sum *= v
 	}
 	return sum
 }
