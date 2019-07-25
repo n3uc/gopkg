@@ -38,8 +38,8 @@ func StringMul(st string) int {
 	return m
 }
 
-// SumSlice sums up all elements in an int array
-func SumSlice(list []int) int {
+// Sum sums up all elements in an int array
+func Sum(list ...int) int {
 	sum := 0
 	for _, v := range list {
 		sum += v
@@ -47,8 +47,8 @@ func SumSlice(list []int) int {
 	return sum
 }
 
-// MulSlice sums up all elements in an int array
-func MulSlice(list []int) int {
+// Mul sums up all elements in an int array
+func Mul(list ...int) int {
 	sum := 1
 	for _, v := range list {
 		sum *= v
@@ -70,8 +70,8 @@ func GCD(a, b int) int {
 func LCM(a, b int, integers ...int) int {
 	result := a * b / GCD(a, b)
 
-	for i := 0; i < len(integers); i++ {
-		result = LCM(result, integers[i])
+	for _, v := range integers {
+		result = LCM(result, v)
 	}
 
 	return result
