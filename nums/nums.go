@@ -1,3 +1,4 @@
+// Package nums contains utility math functions for ints
 package nums
 
 import (
