@@ -2,6 +2,7 @@
 package nums
 
 import (
+	"math"
 	"strconv"
 	"strings"
 )
@@ -88,4 +89,18 @@ func Triangle() func() int {
 		v += i
 		return v
 	}
+}
+
+// Divisors returns a slice of all Divisors of n
+func Divisors(n int) []int {
+	divs := []int{}
+	for i := 1; i <= int(math.Floor(math.Sqrt(float64(n)))); i++ {
+		if n%i == 0 {
+			divs = append(divs, i)
+			if n/i != i {
+				divs = append(divs, n/i)
+			}
+		}
+	}
+	return divs
 }
