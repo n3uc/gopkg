@@ -67,7 +67,7 @@ func GCD(a, b int) int {
 	return a
 }
 
-// LCM find Least Common Multiple (LCM) via GCD
+// LCM finds Least Common Multiple (LCM) via GCD
 func LCM(a, b int, integers ...int) int {
 	result := a * b / GCD(a, b)
 
@@ -76,4 +76,16 @@ func LCM(a, b int, integers ...int) int {
 	}
 
 	return result
+}
+
+// Triangle returns a Function literal that returns the next Triangle number
+// each time it is called.
+func Triangle() func() int {
+	var i int // index of current number
+	var v int // value of current number
+	return func() int {
+		i++
+		v += i
+		return v
+	}
 }
